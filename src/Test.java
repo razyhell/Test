@@ -111,6 +111,7 @@ public class Test {
             Scanner sc = new Scanner(System.in);
             System.out.println("Enter your expression");
             String a = sc.nextLine();
+            a = a.replaceAll("\\s","");
             String[] nums2 = {"I", "II", "III", "IV",
                     "V", "VI", "VII", "VIII", "IX",
                     "X", "XI", "XII", "XIII", "XIV", "XV",
