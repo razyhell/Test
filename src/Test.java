@@ -129,19 +129,19 @@ public class Test {
             char znak = a.charAt(object.getIndex(a));
             if(object.checkArabic(first)) {
                 if (object.checkRome(second)) {
-                    throw new RuntimeException("Two numeral systems at once");
+                    throw new NumberFormatException("Two numeral systems at once");
                 }
                 else if(object.checkArabic(second)) {
                     System.out.println(object.calc(first,second,znak));
                 } else {
                     for(String num:nums4) {
                         if(second.contains(num)) {
-                            throw new RuntimeException("Not allowed by size (1-10)");
+                            throw new NumberFormatException("Not allowed by size (1-10)");
                         }
                     }
                     for(String num:nums5) {
                         if(second.contains(num)) {
-                            throw new RuntimeException("Not allowed by size (1-10)");
+                            throw new NumberFormatException("Not allowed by size (1-10)");
                         }
                     }
                     throw new RuntimeException("Something is wrong with second number's format");
@@ -149,24 +149,24 @@ public class Test {
             }
             else if(object.checkRome(first)) {
                 if(object.checkArabic(second)) {
-                    throw new RuntimeException("Two numeral systems at once");
+                    throw new NumberFormatException("Two numeral systems at once");
                 }
                 else if(object.checkRome(second)) {
                     int result = object.calcRome(first,second,znak,nums2);
                     if(result<1) {
-                        throw new RuntimeException("Result is <1");
+                        throw new NumberFormatException("Result is <1");
                     } else {
                         System.out.println(nums2[result-1]);
                     }
                 } else {
                     for(String num:nums4) {
                         if(second.contains(num)) {
-                            throw new RuntimeException("Not allowed by size (1-10)");
+                            throw new NumberFormatException("Not allowed by size (1-10)");
                         }
                     }
                     for(String num:nums5) {
                         if(second.contains(num)) {
-                            throw new RuntimeException("Not allowed by size (1-10)");
+                            throw new NumberFormatException("Not allowed by size (1-10)");
                         }
                     }
                     throw new RuntimeException("Something is wrong with second number's format");
@@ -175,12 +175,12 @@ public class Test {
             else {
                 for(String num:nums4) {
                     if(first.contains(num)) {
-                        throw new RuntimeException("Not allowed by size (1-10)");
+                        throw new NumberFormatException("Not allowed by size (1-10)");
                     }
                 }
                 for(String num:nums5) {
                     if(first.contains(num)) {
-                        throw new RuntimeException("Not allowed by size (1-10)");
+                        throw new NumberFormatException("Not allowed by size (1-10)");
                     }
                 }
                 throw new RuntimeException("Wrong format");
