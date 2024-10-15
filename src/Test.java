@@ -109,6 +109,7 @@ public class Test {
     public static void main(String[] args) {
         do {
             Scanner sc = new Scanner(System.in);
+            System.out.println("Enter your expression");
             String a = sc.nextLine();
             String[] nums2 = {"I", "II", "III", "IV",
                     "V", "VI", "VII", "VIII", "IX",
@@ -126,9 +127,6 @@ public class Test {
             }
             String second = a.substring(object.getIndex(a) + 1);
             char znak = a.charAt(object.getIndex(a));
-            System.out.println(first);
-            System.out.println(second);
-            System.out.println(znak);
             if(object.checkArabic(first)) {
                 if (object.checkRome(second)) {
                     throw new RuntimeException("Two numeral systems at once");
