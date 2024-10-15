@@ -119,6 +119,7 @@ public class Test {
             String[] nums3 = Arrays.copyOf(nums2, 10);
             String[] nums4 = {"I", "V", "X", "L", "C", "D", "M"};
             String[] nums5 = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+            String[] nums6 = {"+", "-", "*", "/"};
             Test2 object = new Test2();
             String first;
             try {
@@ -128,6 +129,11 @@ public class Test {
             }
             String second = a.substring(object.getIndex(a) + 1);
             char znak = a.charAt(object.getIndex(a));
+            for(String numbers: nums6) {
+                if(second.contains(numbers)) {
+                    throw new NumberFormatException("More than two operators. Wrong format");
+                }
+            }
             if(object.checkArabic(first)) {
                 if (object.checkRome(second)) {
                     throw new NumberFormatException("Two numeral systems at once");
